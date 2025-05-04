@@ -1,0 +1,9 @@
+{
+    "files.associations": {
+        "*.java": "java",
+        "*.tsx": "typescriptreact",
+        "iostream": "cpp",
+        "vector": "cpp",
+        "ostream": "cpp"
+    }
+}
