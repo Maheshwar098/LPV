@@ -137,10 +137,10 @@ void merge_sort_util_parallel(vector<int>& v, int start, int end)
     #pragma omp parallel sections
     {
         #pragma omp section
-        merge_sort_util(v,start, mid);
+        merge_sort_util_parallel(v,start, mid);
 
         #pragma omp section
-        merge_sort_util(v, mid+1, end);
+        merge_sort_util_parallel(v, mid+1, end);
     }
     
 

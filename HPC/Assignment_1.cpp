@@ -71,7 +71,7 @@ int calculate_min_parallel(vector<int>v)
 {
     int min_val = v[0];
     int l = v.size();
-    #pragma omp parallel for reduction(+:min_val)
+    #pragma omp parallel for reduction(min:min_val)
     for(int i = 0 ; i < l ; i++)
     {
         min_val = min(v[i], min_val);
@@ -83,14 +83,13 @@ int calculate_max_parallel(vector<int>v)
 {
     int max_val = v[0];
     int l = v.size();
-    #pragma omp parallel for reduction(+:max_val)
+    #pragma omp parallel for reduction(max:max_val)
     for(int i = 0 ; i < l ; i++)
     {
         max_val = max(v[i], max_val);
     }
     return  max_val;
 }
-
 
 int main()
 {
